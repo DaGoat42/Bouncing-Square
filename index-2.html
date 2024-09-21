@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<title>Dvd ScreenSaver</title>
+
+<style>
+
+html, body {
+
+margin: 0;
+
+padding: 10px 10px;
+
+}
+
+</style>
+
+<body>
+
+<script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js">
+
+</script>
+
+<script src="main.js"></script>
+
+<button onclick="buttonStart()">START</button><br>
+
+<button onclick="buttonStop()">STOP</button><br>
+
+R:<input type="range" id="slider" min="0" max="255" onchange="sliderChangeR(this.value)"/> <br>
+
+G:<input type="range" id="slider" min="0" max="255" onchange="sliderChangeG(this.value)"/> <br>
+
+B:<input type="range" id="slider" min="0" max="255" onchange="sliderChangeB(this.value)"/> <br>
+
+Speed Y:<input type="range" id="slider" min="0" max="10" onchange="sliderChangeSY(this.value)"/> <br>
+
+Speed X:<input type="range" id="slider" min="0" max="10" onchange="sliderChangeSX(this.value)"/><br>
+
+Square Size:<input type="range" id="slider" min="1" max="300" onchange="sliderChangeSW(this.value)"/><br>
+
+</body>
+
+</html>
