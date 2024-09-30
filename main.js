@@ -17,10 +17,10 @@ function sliderChangeSW(val) {
 sw = parseInt(val)
 }
 function sliderChangeSY(valy) {
-speedy = parseInt(valy)
+speedy = parseFloat(valy)
 }
 function sliderChangeSX(valx) {
-speedx = parseInt(valx)
+speedx = parseFloat(valx)
 }
 function sliderChangeR(valr) {
 r = parseInt(valr);
