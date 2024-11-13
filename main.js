@@ -1,5 +1,5 @@
-let rectx = 940;
-let recty = 362;
+let rectx;
+let recty;
 let width;
 let height;
 let speedy = 1;
@@ -63,11 +63,14 @@ function setup() {
     r = random(70, 256);
     g = random(70, 256);
     b = random(70, 256);
+    
+    // Center the square
+    rectx = width / 2 - sw / 2;
+    recty = height / 2 - sw / 2;
 }
 
 function draw() {
     if (START) {
-        //rect(x, y, width, height)
         if (rainbowMode) {
             r = (sin(frameCount * 0.1) * 127 + 128);
             g = (sin(frameCount * 0.1 + TWO_PI / 3) * 127 + 128);
