@@ -13,6 +13,7 @@ let bstep = 1;
 let gstep = 1;
 let sw = 50;
 let START = false;
+let rainbowMode = false;
 
 function sliderChangeSW(val) {
     sw = parseInt(val);
@@ -46,6 +47,10 @@ function buttonStop() {
     START = false;
 }
 
+function toggleRainbowMode() {
+    rainbowMode = !rainbowMode;
+}
+
 console.log("i got here");
 
 function setup() {
@@ -63,6 +68,12 @@ function setup() {
 function draw() {
     if (START) {
         //rect(x, y, width, height)
+        if (rainbowMode) {
+            r = (sin(frameCount * 0.1) * 127 + 128);
+            g = (sin(frameCount * 0.1 + TWO_PI / 3) * 127 + 128);
+            b = (sin(frameCount * 0.1 + TWO_PI * 2 / 3) * 127 + 128);
+        }
+
         fill(r, g, b);
         strokeWeight(0);
         rect(rectx, recty, sw, sw);
@@ -74,27 +85,31 @@ function draw() {
         }
         rectx += speedx;
         recty += speedy;
-        if (r >= 255) {
-            rstep = -1;
+
+        if (!rainbowMode) {
+            if (r >= 255) {
+                rstep = -1;
+            }
+            if (g >= 255) {
+                gstep = -1;
+            }
+            if (b >= 255) {
+                bstep = -1;
+            }
+            if (r <= mincolor) {
+                rstep = 1;
+            }
+            if (g <= mincolor) {
+                gstep = 1;
+            }
+            if (b <= mincolor) {
+                bstep = 1;
+            }
+            r = (r + rstep);
+            g = (g + gstep);
+            b = (b + bstep);
         }
-        if (g >= 255) {
-            gstep = -1;
-        }
-        if (b >= 255) {
-            bstep = -1;
-        }
-        if (r <= mincolor) {
-            rstep = 1;
-        }
-        if (g <= mincolor) {
-            gstep = 1;
-        }
-        if (b <= mincolor) {
-            bstep = 1;
-        }
-        r = (r + rstep);
-        g = (g + gstep);
-        b = (b + bstep);
+        
         console.log(r, g, b);
     }
 }
