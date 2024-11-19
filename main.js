@@ -55,8 +55,8 @@ console.log("i got here");
 
 function setup() {
     mincolor = random(70, 155);
-    width = windowWidth - 10;
-    height = windowHeight - 10;
+    width = windowWidth - 50;
+    height = windowHeight - 50;
     createCanvas(width, height);
     frameRate(1000);
     background(0);
