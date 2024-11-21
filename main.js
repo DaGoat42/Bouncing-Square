@@ -58,7 +58,7 @@ function setup() {
     width = windowWidth - 50;
     height = windowHeight - 50;
     createCanvas(width, height);
-    frameRate(1000);
+    frameRate(60);  // Increase frame rate to 60
     background(0);
     r = random(70, 256);
     g = random(70, 256);
@@ -70,6 +70,7 @@ function setup() {
 }
 
 function draw() {
+    background(0);  // Clear the canvas on each frame
     if (START) {
         if (rainbowMode) {
             r = (sin(frameCount * 0.1) * 127 + 128);
@@ -80,6 +81,7 @@ function draw() {
         fill(r, g, b);
         strokeWeight(0);
         rect(rectx, recty, sw, sw);
+
         if (rectx >= width - sw || rectx <= 0) {
             speedx = -speedx;
         }
