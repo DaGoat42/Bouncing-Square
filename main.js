@@ -70,7 +70,8 @@ function setup() {
 }
 
 function draw() {
-    background(0);  // Clear the canvas on each frame
+    // Remove the following line to keep the previous squares on the canvas
+    // background(0);  // Clear the canvas on each frame
     if (START) {
         if (rainbowMode) {
             r = (sin(frameCount * 0.1) * 127 + 128);
