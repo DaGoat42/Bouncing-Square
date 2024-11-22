@@ -14,6 +14,7 @@ let gstep = 1;
 let sw = 50;
 let START = false;
 let rainbowMode = false;
+let clearFrame = true;
 
 function sliderChangeSW(val) {
     sw = parseInt(val);
@@ -51,6 +52,10 @@ function toggleRainbowMode() {
     rainbowMode = !rainbowMode;
 }
 
+function toggleClearFrame() {
+    clearFrame = !clearFrame;
+}
+
 console.log("i got here");
 
 function setup() {
@@ -70,8 +75,9 @@ function setup() {
 }
 
 function draw() {
-    // Remove the following line to keep the previous squares on the canvas
-    // background(0);  // Clear the canvas on each frame
+    if (clearFrame) {
+        background(0);  // Clear the canvas on each frame
+    }
     if (START) {
         if (rainbowMode) {
             r = (sin(frameCount * 0.1) * 127 + 128);
