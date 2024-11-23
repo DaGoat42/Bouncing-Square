@@ -75,10 +75,11 @@ function setup() {
 }
 
 function draw() {
-    if (clearFrame) {
-        background(0);  // Clear the canvas on each frame
-    }
+  
     if (START) {
+        if (clearFrame) {
+            background(0);  // Clear the canvas on each frame
+        }
         if (rainbowMode) {
             r = (sin(frameCount * 0.1) * 127 + 128);
             g = (sin(frameCount * 0.1 + TWO_PI / 3) * 127 + 128);
