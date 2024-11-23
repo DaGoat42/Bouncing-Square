@@ -14,7 +14,7 @@ let gstep = 1;
 let sw = 50;
 let START = false;
 let rainbowMode = false;
-let clearFrame = true;
+let clearFrame = false;
 
 function sliderChangeSW(val) {
     sw = parseInt(val);
