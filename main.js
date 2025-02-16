@@ -15,7 +15,7 @@ let sw = 50;
 let START = false;
 let rainbowMode = false;
 let clearFrame = false;
-const sound = new Audio('/workspaces/Bouncing-Square/Sound.mp3');
+let sound = new Audio('/workspaces/Bouncing-Square/Sound.mp3');
 
 function sliderChangeSW(val) {
     sw = parseInt(val);
