@@ -93,15 +93,9 @@ function draw() {
 
         if (rectx >= width - sw || rectx <= 0) {
             speedx = -speedx;
-            console.log("Playing sound for horizontal collision");
-            sound.currentTime = 0;  // Reset audio to start
-            sound.play().catch(error => console.error("Error playing sound:", error));
-        }
-        if (recty >= height - sw || recty <= 0) {
+        
+            if (recty >= height - sw || recty <= 0) {
             speedy = -speedy;
-            console.log("Playing sound for vertical collision");
-            sound.currentTime = 0;  // Reset audio to start
-            sound.play().catch(error => console.error("Error playing sound:", error));
         }
         rectx += speedx;
         recty += speedy;
