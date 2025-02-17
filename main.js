@@ -64,6 +64,7 @@ function setup() {
     width = windowWidth - 50;
     height = windowHeight - 50;
     createCanvas(width, height);
+    fill(0);
     frameRate(60);  // Increase frame rate to 60
     background(0);
     r = random(70, 256);
