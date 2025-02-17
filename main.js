@@ -93,8 +93,8 @@ function draw() {
 
         if (rectx >= width - sw || rectx <= 0) {
             speedx = -speedx;
-        
-            if (recty >= height - sw || recty <= 0) {
+        }
+        if (recty >= height - sw || recty <= 0) {
             speedy = -speedy;
         }
         rectx += speedx;
@@ -124,6 +124,5 @@ function draw() {
             b = (b + bstep);
         }
         
-        console.log(r, g, b);
     }
 }
