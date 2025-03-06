@@ -15,7 +15,6 @@ let sw = 50;
 let START = false;
 let rainbowMode = false;
 let clearFrame = false;
-let SoundTest = new Audio('/workspaces/Bouncing-Square/Sound.mp3');
 
 function sliderChangeSW(val) {
     sw = parseInt(val);
@@ -94,9 +93,11 @@ function draw() {
 
         if (rectx >= width - sw || rectx <= 0) {
             speedx = -speedx;
+            bounceSound.play();
         }
         if (recty >= height - sw || recty <= 0) {
             speedy = -speedy;
+            bounceSound.play();
         }
         rectx += speedx;
         recty += speedy;
@@ -126,4 +127,9 @@ function draw() {
         }
         
     }
+}
+
+function preload() {
+  soundFormats('mp3');
+  bounceSound = loadSound('Sound.mp3');
 }
