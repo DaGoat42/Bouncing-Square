@@ -15,6 +15,7 @@ let sw = 50;
 let START = false;
 let rainbowMode = false;
 let clearFrame = false;
+let bounceSound = loadSound('Sound.mp3');
 
 function sliderChangeSW(val) {
     sw = parseInt(val);
@@ -127,9 +128,4 @@ function draw() {
         }
         
     }
-}
-
-function preload() {
-  soundFormats('mp3');
-  bounceSound = loadSound('Sound.mp3');
 }
