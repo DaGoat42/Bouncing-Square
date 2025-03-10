@@ -15,7 +15,7 @@ let sw = 50;
 let START = false;
 let rainbowMode = false;
 let clearFrame = false;
-let bounceSound = loadSound('Sound.mp3');
+let bounceSound;
 
 function sliderChangeSW(val) {
     sw = parseInt(val);
@@ -60,6 +60,7 @@ function toggleClearFrame() {
 console.log("i got here");
 
 function setup() {
+    bounceSound = loadSound('Sound.mp3');
     mincolor = random(70, 155);
     width = windowWidth - 50;
     height = windowHeight - 50;
