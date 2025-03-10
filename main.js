@@ -60,7 +60,7 @@ function toggleClearFrame() {
 console.log("i got here");
 
 function setup() {
-    bounceSound = loadSound('Sound.mp3');
+    bounceSound = loadSound('Xylophone.wav');
     mincolor = random(70, 155);
     width = windowWidth - 50;
     height = windowHeight - 50;
