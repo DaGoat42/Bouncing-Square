@@ -60,6 +60,7 @@ function toggleClearFrame() {
 console.log("i got here");
 
 function setup() {
+    //synth = new p5.PolySynth();
     bounceSound = loadSound('Xylophone.wav');
     mincolor = random(70, 155);
     width = windowWidth - 50;
@@ -96,10 +97,12 @@ function draw() {
         if (rectx >= width - sw || rectx <= 0) {
             speedx = -speedx;
             bounceSound.play();
+            //synth.play(random(400, 500));
         }
         if (recty >= height - sw || recty <= 0) {
             speedy = -speedy;
             bounceSound.play();
+            //synth.play(random(400, 500));
         }
         rectx += speedx;
         recty += speedy;
